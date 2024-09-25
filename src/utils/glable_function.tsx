@@ -207,26 +207,34 @@ export function convertEncryptData(data: any): DecryptMoreData {
 }
 
 export function postSession(dispatch: any, data: any) {
-  dispatch(setUser(convertEncryptData(data.datauser)));
+  dispatch(setUser(data.datauser));
 }
 
 export function set_lang(lang: string) {
+  document.documentElement.classList.remove("kh-font", "en-font");
   if (lang === "kh") {
-    document.documentElement.style.fontFamily = "'Battambang'";
+    document.documentElement.classList.add("kh-font");
   } else if (lang === "en") {
-    document.documentElement.style.fontFamily = "'Roboto', sans-serif";
+    document.documentElement.classList.add("en-font");
   }
-  document.querySelectorAll("input").forEach((input) => {
-    (input as HTMLInputElement).style.fontFamily =
-      document.documentElement.style.fontFamily;
-  });
-  document.querySelectorAll("button").forEach((button) => {
-    (button as HTMLButtonElement).style.fontFamily =
-      document.documentElement.style.fontFamily;
-  });
   document.documentElement.lang = lang;
   const event = new CustomEvent("languageChange", {
     detail: { language: lang },
   });
   window.dispatchEvent(event);
+}
+
+export function data_emty(data: any) {
+  if (empty(data)) {
+    return "---";
+  } else {
+    return data;
+  }
+}
+export function link_img(data: any) {
+  if (empty(data)) {
+    return "---.png";
+  } else {
+    return data;
+  }
 }

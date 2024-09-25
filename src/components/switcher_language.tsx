@@ -32,9 +32,12 @@ const LanguageSwitcher: React.FC = () => {
           showConfirmButton: false,
         }).then(() => {
           Swal.close();
+          set_lang(lng);
         });
+      } else {
+        Swal.close();
+        set_lang(lng);
       }
-      set_lang(lng);
     } else {
       Swal.close();
     }

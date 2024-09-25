@@ -4,6 +4,52 @@
   box-sizing: border-box;
 }
 
+.kh-font div,
+.kh-font input,
+.kh-font p,
+.kh-font a,
+.kh-font span,
+.kh-font h1,
+.kh-font h2,
+.kh-font h3,
+.kh-font h4,
+.kh-font h5,
+.kh-font h6,
+.kh-font ul,
+.kh-font li,
+.kh-font ol,
+.kh-font tr,
+.kh-font th,
+.kh-font td,
+.kh-font button,
+.kh-font label,
+.kh-font textarea {
+  font-family: Battambang;
+}
+
+.en-font div,
+.en-font input,
+.en-font p,
+.en-font a,
+.en-font span,
+.en-font h1,
+.en-font h2,
+.en-font h3,
+.en-font h4,
+.en-font h5,
+.en-font h6,
+.en-font ul,
+.en-font li,
+.en-font ol,
+.en-font tr,
+.en-font th,
+.en-font td,
+.en-font button,
+.en-font label,
+.en-font textarea {
+  font-family: Roboto, sans-serif;
+}
+
 .home {
   display: flex;
   overflow: hidden;

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../switcher_language";
@@ -8,9 +8,6 @@ import ColorSwitcher from "../switcher_color";
 import Log from "../user/user_icon";
 import Image from "next/image";
 import "sweetalert2/dist/sweetalert2.css";
-import { useSelector } from "react-redux";
-import { RootState } from "../../auth/store";
-
 import {
   SearchOutlined as SearchIcon,
   FullscreenExitOutlined as FullscreenExitIcon,
@@ -18,16 +15,21 @@ import {
   ChatBubbleOutlineOutlined as ChatBubbleOutlineIcon,
   ListOutlined as ListIcon,
 } from "@mui/icons-material";
-
 import { useSearch } from "../../contexts/product_search_context";
-
+import { useSessionData } from "../../utils/helper/use_selector";
+import { empty } from "../../utils/glable_function";
 const Navbar: React.FC = () => {
+  const [user_data, setUserData] = useState<any>([]);
   const { t } = useTranslation();
   const { searchTerm, setSearchTerm } = useSearch();
-  const isLoggedIn = useSelector(
-    (state: RootState) => state.session.isLoggedIn
-  );
   const router = useRouter();
+  const { isLoggedIn, user } = useSessionData();
+
+  useEffect(() => {
+    if (isLoggedIn && user) {
+      setUserData(user);
+    }
+  }, [isLoggedIn, user]);
 
   const handleCategoryClick = (page: string) => {
     router.push(`${page}`);
@@ -105,7 +107,7 @@ const Navbar: React.FC = () => {
                 className="item"
                 onClick={() => handleCategoryClick("/user/profile")}>
                 <Image
-                  src={`/image/users/${''}`}
+                  src={`/assets/users/${!empty(user_data)?user_data.image:'---.png'}`}
                   alt="avatar"
                   width={40}
                   height={40}

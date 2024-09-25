@@ -4,6 +4,56 @@
   box-sizing: border-box;
 }
 
+.kh-font {
+  div,
+  input,
+  p,
+  a,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  li,
+  ol,
+  tr,
+  th,
+  td,
+  button,
+  label,
+  textarea {
+    font-family: Battambang;
+  }
+}
+
+.en-font {
+  div,
+  input,
+  p,
+  a,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  li,
+  ol,
+  tr,
+  th,
+  td,
+  button,
+  label,
+  textarea {
+    font-family: Roboto, sans-serif;
+  }
+}
+
 .home {
   display: flex;
   overflow: hidden;

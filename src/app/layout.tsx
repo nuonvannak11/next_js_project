@@ -5,7 +5,6 @@ import { SearchProvider } from "../contexts/product_search_context";
 import { ProductBannerContextProvider } from "../contexts/product_banner_context";
 import ReduxProvider from "../contexts/auth_context";
 import QureyProviders from "../contexts/react_qurey";
-import { class_screen } from "../utils/glable_function";
 import "../styles/desktop/screen_desktop.css";
 import "../styles/desktop/sreen_destop_darkmode.css";
 import "../config/i18n";
