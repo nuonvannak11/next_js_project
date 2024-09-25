@@ -1,56 +1,47 @@
 "use client";
 
 import React, { useContext } from "react";
-import { ProductContext } from "../contexts/product_context";
+import {check_screen } from "../../../utils/glable_function";
+import { ProductContext } from "../../../contexts/product_context";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
-import ProductBanner from "../components/product/product_banner";
-import MainLayout from "../components/layout/layout_main";
-import { useSearch } from "../contexts/product_search_context";
-import {
-  lower_text,
-  check_screen,
-} from "../utils/glable_function";
-const Home: React.FC = () => {
+import ProductBanner from "../../../components/product/product_banner";
+import MainLayout from "../../../components/layout/layout_main";
+
+const Electronic: React.FC = () => {
   const { product, error } = useContext(ProductContext);
   const { t } = useTranslation();
-  const { searchTerm } = useSearch();
 
   if (error) {
     return <div>Error: {error}</div>;
   }
-
-  const filteredProducts = searchTerm
-    ? product.filter((productItem) => {
-        if (!productItem.product_name) return false;
-        return lower_text(productItem.product_name).includes(lower_text(searchTerm));
-      })
-    : product;
-
+  const product_filter = product.filter(
+    (datas) => datas.category === "Electronics"
+  );
   return (
     <MainLayout
       page={
         <div id="shop">
           <div className="banner-item">
-            <ProductBanner page={"home_page"} />
+            <ProductBanner page={"Electronic"} />
           </div>
           {check_screen("desktop") && (
             <div className="items">
-              {filteredProducts.length > 0 ? (
-                filteredProducts.map((productItem) => (
+              {product_filter.length > 0 ? (
+                product_filter.map((productItem) => (
                   <div className="single-item" key={productItem.id}>
                     <div className="left-set">
                       <Image
                         src="/assets/products/category/All/bag.png"
-                        alt={productItem.product_image}
+                        alt={productItem.name}
                         width={500}
                         height={500}
                         priority
                       />
                     </div>
                     <div className="right-set">
-                      <div className="name">{productItem.product_name}</div>
-                      <div className="price">{productItem.product_price}$</div>
+                      <div className="name">{productItem.name}</div>
+                      <div className="price">{productItem.price}$</div>
                       <div className="description">
                         <p>
                           {t("Create")}: {productItem.product_create}
@@ -59,7 +50,7 @@ const Home: React.FC = () => {
                           {t("From")}: {productItem.product_from}
                         </p>
                         <p>
-                          {t("Warranty")}: {productItem.warranty} {t("year")}
+                          {t("Warranty")}: {productItem.warranty} year
                         </p>
                         <p>
                           {t("Product Status")}:{" "}
@@ -72,7 +63,7 @@ const Home: React.FC = () => {
                   </div>
                 ))
               ) : (
-                <p>{t("Product Not Found!")}</p>
+                <p>No products available</p>
               )}
             </div>
           )}
@@ -82,4 +73,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Electronic;

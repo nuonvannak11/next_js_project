@@ -1,0 +1,365 @@
+:root {
+  --dark: #1f1f1f;
+  --dark-wh: #ffff;
+  --dark-white: #394457;
+  --dark-blue: #424647;
+  --dark-cy: #759499;
+  --dark-img-shadow: #5f7786;
+  --dark-line: #95f0ff;
+  --dark-text: #f2f2e1;
+  --dark-hover: #949399ab;
+  --dark-icon: #87ffea;
+  --dark-cys: #03e9f4;
+  --dark-card: #58fd7c;
+  --font-ml: 15px;
+  --font-sm: 20px;
+  --font-weight: 900;
+}
+
+body.DarkMode {
+  background-color: var(--dark);
+}
+body.DarkMode .swal2-popup.swal2-modal.swal2-show {
+  background-color: var(--dark-white);
+  border: solid 2px var(--dark-line);
+  box-shadow: 0 0 3px 3px var(--dark-img-shadow);
+}
+body.DarkMode .swal2-popup.swal2-modal.swal2-show .swal2-success-circular-line-left,
+body.DarkMode .swal2-popup.swal2-modal.swal2-show .swal2-success-circular-line-right,
+body.DarkMode .swal2-popup.swal2-modal.swal2-show .swal2-success-fix {
+  background-color: var(--dark-white) !important;
+}
+body.DarkMode .swal2-popup.swal2-modal.swal2-show .swal2-title,
+body.DarkMode .swal2-popup.swal2-modal.swal2-show .swal2-html-container,
+body.DarkMode .swal2-popup.swal2-modal.swal2-show .swal2-footer {
+  color: var(--dark-text);
+}
+body.DarkMode .swal2-popup.swal2-modal.swal2-show .swal2-html-container .flagOptions a {
+  color: var(--dark-text);
+}
+body.DarkMode .swal2-popup.swal2-modal.swal2-show .swal2-html-container .flagOptions a img {
+  filter: drop-shadow(0px 1px 6px var(--dark-img-shadow));
+}
+body.DarkMode .swal2-popup.swal2-modal.swal2-show .swal2-html-container .flagOptions a:hover {
+  color: var(--dark-line);
+}
+body.DarkMode .desktop_screen {
+  background-color: var(--dark-white);
+}
+body.DarkMode .desktop_screen .loading {
+  width: 100%;
+  border-radius: 3px;
+  border: solid 2px var(--dark-line);
+  box-shadow: 0 0 2px 2px var(--dark-img-shadow);
+  padding: 5px 10px 10px 10px;
+  color: var(--dark-text);
+  font-size: var(--font-sm);
+  font-weight: var(--font-weight);
+  text-align: center;
+}
+body.DarkMode .desktop_screen .home .sidebar {
+  background-color: var(--dark-white);
+  border: none;
+}
+body.DarkMode .desktop_screen .home .sidebar .top {
+  height: auto;
+}
+body.DarkMode .desktop_screen .home .sidebar .top span {
+  padding: 15px;
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .sidebar .center {
+  margin: 18px 10px 10px 10px;
+  border-radius: 3px;
+  border: solid 1px var(--dark-line);
+  box-shadow: 0 0 1px 1px var(--dark-img-shadow);
+}
+body.DarkMode .desktop_screen .home .sidebar .center ul {
+  padding: 5px;
+}
+body.DarkMode .desktop_screen .home .sidebar .center ul p {
+  background-color: var(--dark-white);
+  box-shadow: var(--dark-white);
+  color: var(--dark-text);
+  font-size: var(--font-sm);
+}
+body.DarkMode .desktop_screen .home .sidebar .center ul li {
+  padding: 5px;
+}
+body.DarkMode .desktop_screen .home .sidebar .center ul li span {
+  font-size: var(--font-ml);
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .sidebar .center ul li svg {
+  color: var(--dark-icon);
+}
+body.DarkMode .desktop_screen .home .sidebar .center ul li:hover {
+  background-color: var(--dark-hover);
+}
+body.DarkMode .desktop_screen .home .sidebar .center ul .list-item,
+body.DarkMode .desktop_screen .home .sidebar .center ul .useful-item,
+body.DarkMode .desktop_screen .home .sidebar .center ul .service-item,
+body.DarkMode .desktop_screen .home .sidebar .center ul .user-item {
+  margin-top: 10px;
+}
+body.DarkMode .desktop_screen .home .homeContainer .navbar {
+  width: 100%;
+  height: auto;
+  border: none;
+}
+body.DarkMode .desktop_screen .home .homeContainer .navbar .wrapper {
+  background-color: var(--dark-white);
+  padding: 15px;
+}
+body.DarkMode .desktop_screen .home .homeContainer .navbar .wrapper .search {
+  cursor: pointer;
+  border: solid 1px var(--dark-line);
+  box-shadow: 0 0 1px 1px var(--dark-img-shadow);
+  border-radius: 2px;
+}
+body.DarkMode .desktop_screen .home .homeContainer .navbar .wrapper .search ::placeholder {
+  color: var(--dark-wh);
+}
+body.DarkMode .desktop_screen .home .homeContainer .navbar .wrapper .search input {
+  color: var(--dark-wh);
+}
+body.DarkMode .desktop_screen .home .homeContainer .navbar .wrapper .search svg {
+  color: var(--dark-wh);
+}
+body.DarkMode .desktop_screen .home .homeContainer .navbar .wrapper .main-nav .nav-item button {
+  background-color: var(--dark-cy);
+  border: solid 1px var(--dark-line);
+  box-shadow: 0 0 4px 4px var(--dark-img-shadow);
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .navbar .wrapper .main-nav .nav-item button:hover {
+  background-color: var(--dark-cys);
+  box-shadow: 0 0 5px var(--dark-cys), 0 0 25px var(--dark-cys), 0 0 50px var(--dark-cys), 0 0 100px var(--dark-cys);
+}
+body.DarkMode .desktop_screen .home .homeContainer .navbar .wrapper .items .item svg {
+  color: var(--dark-icon);
+  filter: drop-shadow(0px 1px 6px var(--dark-img-shadow));
+}
+body.DarkMode .desktop_screen .home .homeContainer .navbar .wrapper .items .item img {
+  filter: drop-shadow(0px 1px 6px var(--dark-img-shadow));
+}
+body.DarkMode .desktop_screen .home .homeContainer .navbar .wrapper .items .item:hover {
+  filter: drop-shadow(-1px 4px 11px var(--dark-cys));
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop::-webkit-scrollbar {
+  width: 10px;
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop::-webkit-scrollbar-thumb {
+  background-color: var(--dark-cys);
+  border-radius: 10px;
+  border: 1px solid var(--dark-line);
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dark-icon);
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop {
+  max-height: 1200px;
+  height: 100%;
+  overflow-y: auto;
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item {
+  padding: 5px 10px 10px 10px;
+  height: auto;
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item .full-width-container {
+  height: auto;
+  margin-top: 1px;
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item .full-width-container .collection-banner-container {
+  background-color: var(--dark-blue);
+  border: solid 2px var(--dark-line);
+  box-shadow: 0 0 2px 2px var(--dark-img-shadow);
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item .full-width-container .collection-banner-container .collection-banner .jarrow-category-banner.prebiotic-health-css-banner {
+  display: flex;
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item .full-width-container .collection-banner-container .collection-banner .jarrow-category-banner.prebiotic-health-css-banner .jcb-left .raleway {
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item .full-width-container .collection-banner-container .collection-banner .jarrow-category-banner.prebiotic-health-css-banner .jcb-left .field .sns-btn--twitter,
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item .full-width-container .collection-banner-container .collection-banner .jarrow-category-banner.prebiotic-health-css-banner .jcb-left .field .sns-btn--facebook,
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item .full-width-container .collection-banner-container .collection-banner .jarrow-category-banner.prebiotic-health-css-banner .jcb-left .field .sns-btn--instagram {
+  border: solid 2px var(--dark-line);
+  box-shadow: 0 0 4px 4px var(--dark-img-shadow);
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item .full-width-container .collection-banner-container .collection-banner .jarrow-category-banner.prebiotic-health-css-banner .jcb-left .lazer a {
+  color: var(--dark-text);
+  border-radius: 5px;
+  border: solid 2px var(--dark-text);
+  background-color: var(--dark-img-shadow);
+  box-shadow: 0 0 4px 4px var(--dark-line);
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item .full-width-container .collection-banner-container .collection-banner .jarrow-category-banner.prebiotic-health-css-banner .jcb-left .lazer a:hover {
+  background: var(--dark-cys);
+  color: var(--dark-text);
+  box-shadow: 0 0 5px var(--dark-cys), 0 0 25px var(--dark-cys), 0 0 50px var(--dark-cys), 0 0 100px var(--dark-cys);
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item .full-width-container .collection-banner-container .collection-banner .jarrow-category-banner.prebiotic-health-css-banner .jcb-right .discount-circle {
+  border: solid 2px var(--dark-text);
+  box-shadow: 0 0 4px 4px var(--dark-line);
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item .full-width-container .collection-banner-container .collection-banner .jarrow-category-banner.prebiotic-health-css-banner .jcb-right .discount-circle:hover {
+  height: 150px;
+  width: 150px;
+  font-size: 70px;
+  font-weight: bold;
+  box-shadow: 0 0 5px #f2dd9d, 0 0 25px #c7c17d, 0 0 50px #afeff2, 0 0 100px #e1fdff;
+  transition: all 0.4s ease-out;
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item .full-width-container .collection-banner-container .collection-banner .jarrow-category-banner.prebiotic-health-css-banner .jcb-right .bg {
+  transform: translateY(20%);
+  position: relative;
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .banner-item .full-width-container .collection-banner-container .collection-banner .jarrow-category-banner.prebiotic-health-css-banner .jcb-right .bg .prebiotic-health-cb-pic {
+  filter: drop-shadow(-1px 4px 11px var(--dark-line));
+  top: 0px;
+  left: 0px;
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .items {
+  position: relative;
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .items .errors {
+  top: 20px;
+  position: absolute;
+  color: var(--dark-text);
+  font-size: var(--font-sm);
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .items .single-item {
+  background-color: var(--dark-blue);
+  border: solid 2px var(--dark-line);
+  box-shadow: 0 0 2px 2px var(--dark-img-shadow);
+  position: relative;
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .items .single-item .left-set img {
+  filter: drop-shadow(11px 2px 16px var(--dark-img-shadow));
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .items .single-item .right-set .name {
+  position: absolute;
+  text-wrap: nowrap;
+  text-align: center;
+  left: 10%;
+  right: 10%;
+  top: 0px;
+  color: var(--dark-text);
+  font-size: var(--font-sm);
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .items .single-item .right-set .price {
+  margin-top: 20px;
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .items .single-item .right-set .description p {
+  color: var(--dark-text);
+  font-size: var(--font-ml);
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .items .single-item .right-set .items-botton .btn-first.btn-card,
+body.DarkMode .desktop_screen .home .homeContainer #shop .items .single-item .right-set .items-botton .btn-second.btn-card-second {
+  border: solid 1px var(--dark-line);
+  box-shadow: 0 0 2px 2px var(--dark-img-shadow);
+}
+body.DarkMode .desktop_screen .home .homeContainer #shop .items .single-item .right-set .items-botton .btn-second.btn-card-second:hover {
+  background-color: var(--dark-card);
+  box-shadow: 0 0 5px var(--dark-card), 0 0 25px var(--dark-card), 0 0 50px var(--dark-card), 0 0 100px var(--dark-card);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper {
+  background-color: var(--dark-blue);
+  border: solid 2px var(--dark-line);
+  box-shadow: 0 0 2px 2px var(--dark-img-shadow);
+  border-radius: 5px;
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left {
+  background: var(--dark-blue);
+  border-right: solid 2px var(--dark-line);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left img {
+  border: 2px solid var(--dark-cys);
+  filter: drop-shadow(-1px 4px 11px var(--dark-line));
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .cover-item {
+  border: solid 1px var(--dark-line);
+  box-shadow: 0 0 2px 2px var(--dark-img-shadow);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .cover-item .name-user {
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .cover-item p {
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .field-profile .update-users-default .mainbutton {
+  background-color: var(--dark-cys);
+  border: solid 2px var(--dark-line);
+  box-shadow: 0 0 2px 2px var(--dark-img-shadow);
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .field-profile .update-users-default .mainbutton:hover {
+  background: var(--dark-cys);
+  color: var(--dark-text);
+  box-shadow: 0 0 5px var(--dark-cys), 0 0 25px var(--dark-cys), 0 0 50px var(--dark-cys), 0 0 100px var(--dark-cys);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .field-profile .update-users-default .popup {
+  background: var(--dark-white);
+  border: solid 2px var(--dark-line);
+  box-shadow: 0 0 2px 2px var(--dark-img-shadow);
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .field-profile .update-users-default .popup .close-button img {
+  border: none;
+  filter: drop-shadow(-1px 4px 11px var(--dark-line));
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .field-profile .update-users-default .popup form .cover-update-users .form-group label {
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .field-profile .update-users-default .popup form .cover-update-users .form-group ::placeholder {
+  color: var(--dark-wh);
+  opacity: 0.5;
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .field-profile .update-users-default .popup form .cover-update-users .form-group input {
+  background: var(--dark-white);
+  border: solid 1px var(--dark-line);
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .field-profile .update-users-default .popup form .cover-update-users .form-group input:focus {
+  box-shadow: 0 0 3px 3px var(--dark-img-shadow);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .field-profile .update-users-default .popup form .cover-submit button {
+  background-color: var(--dark-cys);
+  border: solid 2px var(--dark-line);
+  box-shadow: 0 0 2px 2px var(--dark-img-shadow);
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .field-profile .update-users-default .popup form .cover-submit button:hover {
+  background: var(--dark-cys);
+  color: var(--dark-text);
+  box-shadow: 0 0 5px var(--dark-cys), 0 0 25px var(--dark-cys), 0 0 50px var(--dark-cys), 0 0 100px var(--dark-cys);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .left .field-profile .update-users-default .popup .cover-logo .cover-change-logo img {
+  border: none;
+  filter: drop-shadow(-1px 4px 11px var(--dark-card));
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .right {
+  background-color: var(--dark-blue);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .right .info .basic-info {
+  color: var(--dark-text);
+  border-bottom: 1px solid var(--dark-line);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .right .info .info_data .data h4 {
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .profile-page .wrapper .right .info .info_data .data p {
+  font-size: var(--font-ml);
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .card {
+  background-color: var(--dark-blue);
+  border: solid 1px var(--dark-line);
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .login_signup_pc {
+  background-color: var(--dark-white);
+}

@@ -1,0 +1,22 @@
+.flagOptions {
+    display: flex;
+    justify-content: center;
+
+}
+
+.flagButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.flagButton img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.mainFlag .langague {
+    font-size: 30px;
+}
