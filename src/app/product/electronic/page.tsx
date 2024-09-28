@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useContext } from "react";
-import {check_screen } from "../../../utils/glable_function";
+import { check_screen } from "../../../utils/glable_function";
 import { ProductContext } from "../../../contexts/product_context";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import ProductBanner from "../../../components/product/product_banner";
 import MainLayout from "../../../components/layout/layout_main";
+import { link_img } from "../../../utils/glable_function";
 
 const Electronic: React.FC = () => {
   const { product, error } = useContext(ProductContext);
@@ -32,8 +33,10 @@ const Electronic: React.FC = () => {
                   <div className="single-item" key={productItem.id}>
                     <div className="left-set">
                       <Image
-                        src="/assets/products/category/All/bag.png"
-                        alt={productItem.name}
+                        src={`/assets/products/category/All/${link_img(
+                          productItem.product_image
+                        )}`}
+                        alt={link_img(productItem.product_image)}
                         width={500}
                         height={500}
                         priority

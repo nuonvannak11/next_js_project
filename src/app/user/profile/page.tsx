@@ -7,7 +7,7 @@ import "sweetalert2/dist/sweetalert2.css";
 import { useSessionData } from "../../../utils/helper/use_selector";
 import { empty, link_img, data_emty } from "../../../utils/glable_function";
 import MainLayout from "../../../components/layout/layout_main";
-// import UpdateProfile from "../update/updateProfile";
+import UpdateProfile from "../../../components/user/user_update";
 
 const UserProfile: React.FC = () => {
   const [user_data, setUserData] = useState<any>([]);
@@ -21,7 +21,6 @@ const UserProfile: React.FC = () => {
 
   const { t } = useTranslation();
 
-  console.log("user_data=", user_data);
   if (!isLoggedIn) {
     return (
       <MainLayout
@@ -57,6 +56,7 @@ const UserProfile: React.FC = () => {
                 width={100}
                 height={100}
                 className="logo-users"
+                priority
               />
               <div className="cover-item">
                 <h4 className="name-user">{data_emty(user_data.name)}</h4>
@@ -79,7 +79,9 @@ const UserProfile: React.FC = () => {
                   {t("Level")} : {data_emty(user_data.salary)}$
                 </p>
               </div>
-              <div className="field-profile">{/* <UpdateProfile /> */}</div>
+              <div className="field-profile">
+                <UpdateProfile />
+              </div>
             </div>
             <div className="right">
               <div className="info">

@@ -7,10 +7,7 @@ import Image from "next/image";
 import ProductBanner from "../components/product/product_banner";
 import MainLayout from "../components/layout/layout_main";
 import { useSearch } from "../contexts/product_search_context";
-import {
-  lower_text,
-  check_screen,
-} from "../utils/glable_function";
+import { lower_text, check_screen, link_img } from "../utils/glable_function";
 const Home: React.FC = () => {
   const { product, error } = useContext(ProductContext);
   const { t } = useTranslation();
@@ -23,7 +20,9 @@ const Home: React.FC = () => {
   const filteredProducts = searchTerm
     ? product.filter((productItem) => {
         if (!productItem.product_name) return false;
-        return lower_text(productItem.product_name).includes(lower_text(searchTerm));
+        return lower_text(productItem.product_name).includes(
+          lower_text(searchTerm)
+        );
       })
     : product;
 
@@ -41,8 +40,10 @@ const Home: React.FC = () => {
                   <div className="single-item" key={productItem.id}>
                     <div className="left-set">
                       <Image
-                        src="/assets/products/category/All/bag.png"
-                        alt={productItem.product_image}
+                        src={`/assets/products/category/All/${link_img(
+                          productItem.product_image
+                        )}`}
+                        alt={link_img(productItem.product_image)}
                         width={500}
                         height={500}
                         priority

@@ -112,6 +112,7 @@ const Navbar: React.FC = () => {
                   width={40}
                   height={40}
                   className="avatar"
+                   priority
                 />
               </li>
             </>

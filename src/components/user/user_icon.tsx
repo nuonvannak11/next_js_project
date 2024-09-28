@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { useTranslation } from "react-i18next";
-import Image from "next/image";
 
 const Log = () => {
   const { t } = useTranslation();

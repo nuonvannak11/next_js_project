@@ -238,3 +238,17 @@ export function link_img(data: any) {
     return data;
   }
 }
+
+export function encrypt_many_data(data: { [key: string]: any }) {
+  const encryptedData: { [key: string]: any } = {};
+
+  for (let key in data) {
+    if (data[key]) {
+      encryptedData[key] = encrypt_data(data[key]);
+    } else {
+      encryptedData[key] = data[key];
+    }
+  }
+
+  return encryptedData;
+}

@@ -284,3 +284,37 @@ export const LoginSubmitter = async (
     }
   }
 };
+
+interface UpdateUserProps {
+  message?: string;
+  code: number;
+  data?: any;
+}
+
+export const UpdateUserSubmitter = async (
+  userData: any,
+  tokenUser: any
+): Promise<UpdateUserProps | undefined> => {
+  try {
+    const response = await axios.post<LoginResponse>(
+      api_updateProfile,
+      { userData, tokenUser },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        timeout: 10000,
+      }
+    );
+    return response.data;
+  } catch (error: any) {
+    if (error.code === "ECONNABORTED") {
+      console.error("Error: Request timed out");
+    } else {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  }
+};
