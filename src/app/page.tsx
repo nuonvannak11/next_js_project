@@ -8,6 +8,7 @@ import ProductBanner from "../components/product/product_banner";
 import MainLayout from "../components/layout/layout_main";
 import { useSearch } from "../contexts/product_search_context";
 import { lower_text, check_screen, link_img } from "../utils/glable_function";
+import { AddChardViews } from "../components/product/product_view_detail";
 const Home: React.FC = () => {
   const { product, error } = useContext(ProductContext);
   const { t } = useTranslation();
@@ -69,6 +70,7 @@ const Home: React.FC = () => {
                             : t("Out of stock")}
                         </p>
                       </div>
+                      <AddChardViews productId={productItem.id} page={"home"} />
                     </div>
                   </div>
                 ))

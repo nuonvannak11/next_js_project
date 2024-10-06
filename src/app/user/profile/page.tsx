@@ -117,7 +117,7 @@ const UserProfile: React.FC = () => {
                   </div>
                   <div className="data">
                     <h4>{t("Contact Us")}</h4>
-                    <p>{data_emty(user_data.contact)}</p>
+                    <p>{data_emty(user_data.contact_us)}</p>
                   </div>
                   <div className="data">
                     <h4>{t("Create at")}</h4>

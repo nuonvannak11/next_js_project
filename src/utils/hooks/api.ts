@@ -152,18 +152,19 @@ export const useBannerData = () => {
 };
 
 //GET COLOR THEME
-interface ColorSubmitterResponse {
-  success: boolean;
+interface MainProps {
   message?: string;
+  code: number;
   data?: any;
 }
+
 export const ColorSubmitter = async (
   nameColor: string,
   tokenId: string | number,
   ip: string
-): Promise<ColorSubmitterResponse> => {
+): Promise<MainProps> => {
   try {
-    const response = await axios.post<ColorSubmitterResponse>(
+    const response = await axios.post<MainProps>(
       colorThemeApi,
       { nameColor, tokenId, ip },
       {
@@ -184,25 +185,16 @@ export const ColorSubmitter = async (
 };
 
 //FORGOT PASSWORD
-interface ForgotSubmitterResponse {
-  success: boolean;
-  message?: string;
-  data?: any;
-}
 export const ForgotSubmitter = async (
   data: any
-): Promise<ForgotSubmitterResponse | undefined> => {
+): Promise<MainProps | undefined> => {
   try {
-    const response = await axios.post<ForgotSubmitterResponse>(
-      api_forgotPassword,
-      data,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        timeout: 5000,
-      }
-    );
+    const response = await axios.post<MainProps>(api_forgotPassword, data, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      timeout: 5000,
+    });
     return response.data;
   } catch (error: any) {
     if (error.code === "ECONNABORTED") {
@@ -217,27 +209,15 @@ export const ForgotSubmitter = async (
 };
 
 //GET BENNER
-interface BannerResponse {
-  code: string;
-  message?: string;
-  data?: any;
-}
-export const GetBannerSubmitter = async (): Promise<any> => {
+export const GetBannerSubmitter = async (): Promise<MainProps | undefined> => {
   try {
-    const response = await axios.get<BannerResponse>(apiProductBanner, {
+    const response = await axios.get<MainProps>(apiProductBanner, {
       headers: {
         "Content-Type": "application/json",
       },
       timeout: 5000,
     });
-
-    const dataFromApi = response.data;
-
-    if (dataFromApi.code === "1") {
-      return dataFromApi.data;
-    } else {
-      return dataFromApi.message;
-    }
+    return response.data;
   } catch (error: any) {
     if (error.code === "ECONNABORTED") {
       console.error("Error: Request timed out");
@@ -247,22 +227,15 @@ export const GetBannerSubmitter = async (): Promise<any> => {
         error.response ? error.response.data : error.message
       );
     }
-    return "An error occurred while fetching data";
   }
 };
-
-interface LoginResponse {
-  message?: string;
-  code: number;
-  data?: any;
-}
 
 export const LoginSubmitter = async (
   username: string,
   password: string
-): Promise<LoginResponse | undefined> => {
+): Promise<MainProps | undefined> => {
   try {
-    const response = await axios.post<LoginResponse>(
+    const response = await axios.post<MainProps>(
       api_login,
       { username, password },
       {
@@ -285,20 +258,41 @@ export const LoginSubmitter = async (
   }
 };
 
-interface UpdateUserProps {
-  message?: string;
-  code: number;
-  data?: any;
-}
-
 export const UpdateUserSubmitter = async (
   userData: any,
   tokenUser: any
-): Promise<UpdateUserProps | undefined> => {
+): Promise<MainProps | undefined> => {
   try {
-    const response = await axios.post<LoginResponse>(
+    const response = await axios.post<MainProps>(
       api_updateProfile,
       { userData, tokenUser },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        timeout: 10000,
+      }
+    );
+    return response.data;
+  } catch (error: any) {
+    if (error.code === "ECONNABORTED") {
+      console.error("Error: Request timed out");
+    } else {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  }
+};
+
+export const GetOneProduct = async (
+  id: any
+): Promise<any> => {
+  try {
+    const response = await axios.post<MainProps>(
+      api_get_one_product,
+      { id },
       {
         headers: {
           "Content-Type": "application/json",
