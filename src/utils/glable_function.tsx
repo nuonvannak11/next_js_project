@@ -61,10 +61,16 @@ export async function getLocalIP(): Promise<string> {
 }
 
 export function lower_text(text: any) {
-  if (typeof text === "number") {
-    text = text.toString();
+  let data;
+  if (empty(text)) {
+    data = text;
+  } else {
+    if (typeof text === "number") {
+      text = text.toString();
+    }
+    data = text.toLowerCase();
   }
-  return text.toLowerCase();
+  return data;
 }
 
 export function cv_str(data: any) {

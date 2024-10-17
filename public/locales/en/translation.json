@@ -150,5 +150,8 @@
   "Welcome Aboard!": "Welcome Aboard!",
   "Product Not Found!": "Product Not Found!",
   "Loading...": "Loading...",
-  "Not Found...": "Not Found..."
+  "Not Found...": "Not Found...",
+  "Total Price":"Total Price",
+  "Pay Now":"Pay Now",
+  "Cancel":"Cancel"
 }

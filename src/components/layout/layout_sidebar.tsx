@@ -53,7 +53,7 @@ const Sidebar: React.FC = () => {
             </div>
             <div className="list-item">
               <p className="title">{t("LISTS")}</p>
-              <li onClick={() => handleCategoryClick("/orders")}>
+              <li onClick={() => handleCategoryClick("/user/order")}>
                 <CreditCardIcon className="icon" />
                 <span>{t("Orders")}</span>
               </li>

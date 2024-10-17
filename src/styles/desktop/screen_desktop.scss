@@ -1066,27 +1066,39 @@
   .card {
     border-radius: 5px;
     background-color: aliceblue;
-    height: 800px;
-    width: 1100px;
-    margin: 0 auto;
     box-shadow: 1px 7px 10px 10px rgba(133, 131, 131, 0.4);
-    margin-top: 4%;
     padding: 4px;
+    margin: 0 5%;
+
+    .cover-site {
+      display: flex;
+      gap: 10px;
+      justify-content: space-around;
+      padding: 5px 5px 10px 5px;
+
+      .left-site {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .right-site {
+        display: flex;
+        flex-direction: column;
+      }
+    }
 
     .leftcard {
-      float: left;
-      width: 40%;
-      height: 75%;
-
       .item {
         margin-left: 25px;
         margin-top: 50px;
         border-radius: 5px;
         background-color: rgb(208, 218, 166);
         box-shadow: 1px 7px 10px 10px rgba(133, 131, 131, 0.4);
-        width: 90%;
-        height: 67%;
         padding: 20px;
+
+        img {
+          border-radius: 10px !important;
+        }
       }
 
       .cover {
@@ -1097,16 +1109,11 @@
     }
 
     .rightcard {
-      float: right;
-      width: 60%;
-      height: 75%;
-
       h1 {
         color: rgb(136, 136, 136);
         text-transform: uppercase;
+        text-align: center;
         font-weight: 600;
-        margin-top: 5%;
-        margin-left: 30%;
         text-shadow: 3px 4px 7px rgba(81, 67, 21, 0.8);
       }
 
@@ -1156,60 +1163,57 @@
           color: #5e5e5e;
           margin-bottom: 10px;
 
-          .faMinus {
-            margin-left: 20px;
-            background-color: rgb(245, 129, 167);
-            padding: 2px 4px;
-            border-radius: 2px;
-            color: #5e5e5e;
-            box-shadow: 1px 1px 4px 3px rgba(49, 47, 47, 0.4);
+          .counter {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
           }
 
-          .faMinus:hover {
-            background-color: rgb(247, 89, 141);
-            color: #ffffff;
-            box-shadow: 1px 1px 4px 3px rgba(102, 102, 97, 0.4);
-            border-radius: 2px;
+          .counter .btn {
+            width: 40px;
+            height: 40px;
+            background-color: #ddd;
+            border: none;
+            outline: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 20px;
           }
 
-          .faMinus:active {
-            background-color: rgb(109, 46, 67);
-            color: #ffffff;
-            box-shadow: 1px 1px 4px 3px rgba(102, 102, 97, 0.4);
-            border-radius: 2px;
+          .counter .minus {
+            background-color: #e74c3c;
+            color: white;
           }
 
-          span {
-            margin-left: 25px;
-            background-color: antiquewhite;
-            box-shadow: 0px 1px 3px 4px rgba(102, 102, 97, 0.4);
-            padding: 2px 20px;
-            border: 1px solid gray;
-            vertical-align: top;
-            border-radius: 2px;
+          .counter .plus {
+            background-color: #2ecc71;
+            color: white;
           }
 
-          .faPlus {
-            margin-left: 25px;
-            background-color: rgb(245, 129, 167);
-            padding: 2px 4px;
-            border-radius: 2px;
-            color: #5e5e5e;
-            box-shadow: 1px 1px 4px 3px rgba(49, 47, 47, 0.4);
+          .counter .value-input {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            padding: 0;
+            margin: 0;
+            -moz-appearance: textfield;
           }
 
-          .faPlus:hover {
-            background-color: rgb(247, 89, 141);
-            color: #ffffff;
-            box-shadow: 1px 1px 4px 3px rgba(102, 102, 97, 0.4);
-            border-radius: 2px;
-          }
-
-          .faPlus:active {
-            background-color: rgb(109, 46, 67);
-            color: #ffffff;
-            box-shadow: 1px 1px 4px 3px rgba(102, 102, 97, 0.4);
-            border-radius: 2px;
+          .counter .value-input::-webkit-outer-spin-button,
+          .counter .value-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
           }
         }
       }
@@ -1218,9 +1222,6 @@
     .footerleft {
       justify-content: center;
       display: flex;
-      float: left;
-      width: 40%;
-      height: 25%;
 
       .item {
         width: 100px;
@@ -1228,7 +1229,7 @@
         margin-left: 17px;
         background-color: #d9e4da;
         border-radius: 5px;
-        margin-top: 20%;
+        margin-top: 10%;
         padding: 10px;
         box-shadow: 1px 5px 5px 7px rgba(133, 131, 131, 0.4);
 
@@ -1246,16 +1247,12 @@
     }
 
     .footerright {
-      float: right;
+      margin-left: 30px;
       margin-top: 30px;
-      width: 60%;
-      height: 15%;
+      display: flex;
+      justify-content: space-between;
 
       .item {
-        margin-top: 20px;
-        margin-left: 30px;
-        width: 50%;
-
         label {
           font-size: 25px;
           font-weight: 600;
@@ -1270,46 +1267,41 @@
         }
       }
       .right {
-        float: right;
-        margin-right: 10%;
+        margin-right: 5%;
+        display: flex;
+        gap: 10px;
 
-        button {
+        .btn {
           font-size: 20px;
           border: none;
-          padding: 4px 7px;
-          background-color: rgb(84, 223, 103);
+          padding: 4px 10px;
           border-radius: 3px;
-          margin-left: 10px;
-          color: #5e5e5e;
-        }
-
-        a {
-          font-size: 20px;
-          margin-left: 50px;
-          border: none;
-          padding: 4px 17px;
-          background-color: rgb(245, 136, 116);
-          border-radius: 3px;
+          color: #56544d;
           text-decoration: none;
-          color: rgb(230, 214, 214);
+        }
+        .pay-now {
+          background-color: rgb(84, 223, 103);
+        }
+        .cancel {
+          background-color: rgb(245, 136, 116);
         }
 
-        a:hover {
+        .cancel:hover {
           background-color: rgb(155, 93, 82);
           color: #ffffff;
         }
 
-        button:hover {
+        .pay-now:hover {
           background-color: rgb(52, 117, 50);
           color: #ffffff;
         }
 
-        button:active {
+        .pay-now:active {
           background-color: rgb(72, 131, 70);
           color: #ffffff;
         }
 
-        a:active {
+        .cancel:active {
           background-color: rgb(122, 47, 42);
           color: #ffffff;
         }
@@ -1328,6 +1320,134 @@
             font-weight: bold;
           }
         }
+      }
+    }
+  }
+  .check-out {
+    .card {
+      width: 60rem;
+      margin: auto;
+      background: white;
+      position: center;
+      align-self: center;
+      top: 50rem;
+      border-radius: 1.5rem;
+      box-shadow: 4px 3px 20px #3535358c;
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
+    }
+
+    .leftside {
+      background: #030303;
+      width: 25rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-top-left-radius: 1.5rem;
+      border-bottom-left-radius: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .price {
+        font-size: 20px;
+        .text-price,
+        .red {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .product {
+      object-fit: cover;
+      width: 20em;
+      height: 20em;
+      border-radius: 100%;
+    }
+
+    .rightside {
+      background-color: #ffffff;
+      width: 35rem;
+      border-bottom-right-radius: 1.5rem;
+      border-top-right-radius: 1.5rem;
+      padding: 1rem 2rem 3rem 3rem;
+    }
+
+    p {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin: 0.8rem 0;
+    }
+
+    .inputbox {
+      color: #030303;
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      border-bottom: 1.5px solid #ccc;
+      margin-bottom: 1rem;
+      border-radius: 0.3rem;
+      font-family: "Roboto", sans-serif;
+      color: #615a5a;
+      font-size: 1.1rem;
+      font-weight: 500;
+      outline: none;
+    }
+
+    .expcvv {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 0.6rem;
+    }
+
+    .expcvv_text {
+      padding-right: 1rem;
+    }
+
+    .expcvv_text2 {
+      padding: 0 1rem;
+    }
+
+    .button {
+      background: linear-gradient(135deg, #753370 0%, #298096 100%);
+      padding: 15px;
+      border: none;
+      border-radius: 50px;
+      color: white;
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin-top: 10px;
+      width: 100%;
+      letter-spacing: 0.11rem;
+      outline: none;
+    }
+
+    .button:hover {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 3px 3px 6px #38373785;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      .card {
+        flex-direction: column;
+        width: auto;
+      }
+
+      .leftside {
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 0;
+        border-radius: 0;
+      }
+
+      .rightside {
+        width: auto;
+        border-bottom-left-radius: 1.5rem;
+        padding: 0.5rem 3rem 3rem 2rem;
+        border-radius: 0;
       }
     }
   }
@@ -1917,12 +2037,13 @@
         box-sizing: border-box;
       }
 
-      .left-set img {
+      .left-set .coverimag {
         max-width: 300px;
         max-height: 300px;
         width: 100%;
         margin-top: 20%;
         height: auto;
+        border-radius: 10px;
       }
 
       .right-set {
@@ -2701,6 +2822,110 @@
           opacity: 1;
         }
       }
+    }
+  }
+  .order-page {
+    .product-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      width: 800px;
+      margin: 20px auto;
+      background-color: #f9f9f9;
+    }
+
+    .product-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .product-image img {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .product-details {
+      margin-left: 20px;
+    }
+
+    .product-details h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .rating {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    .star {
+      font-size: 20px;
+    }
+
+    .half {
+      color: #ccc;
+    }
+
+    .price-details {
+      text-align: center;
+    }
+
+    .price {
+      font-size: 18px;
+    }
+
+    .original-price {
+      text-decoration: line-through;
+      color: #888;
+    }
+
+    .discounted-price {
+      color: #e63946;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    .quantity {
+      margin: 10px 0;
+    }
+
+    .quantity select {
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+
+    .total-price {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .actions button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .delete {
+      color: #e63946;
+    }
+
+    .wishlist {
+      color: #999;
+      margin-top: 10px;
     }
   }
 }

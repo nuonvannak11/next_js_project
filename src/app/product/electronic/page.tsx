@@ -8,7 +8,7 @@ import Image from "next/image";
 import ProductBanner from "../../../components/product/product_banner";
 import MainLayout from "../../../components/layout/layout_main";
 import { link_img } from "../../../utils/glable_function";
-
+import { AddChardViews } from "../../../components/product/product_view_detail";
 const Electronic: React.FC = () => {
   const { product, error } = useContext(ProductContext);
   const { t } = useTranslation();
@@ -33,9 +33,8 @@ const Electronic: React.FC = () => {
                   <div className="single-item" key={productItem.id}>
                     <div className="left-set">
                       <Image
-                        src={`/assets/products/category/All/${link_img(
-                          productItem.product_image
-                        )}`}
+                        className="coverimag"
+                        src={link_img(productItem.product_image)}
                         alt={link_img(productItem.product_image)}
                         width={500}
                         height={500}
@@ -43,8 +42,8 @@ const Electronic: React.FC = () => {
                       />
                     </div>
                     <div className="right-set">
-                      <div className="name">{productItem.name}</div>
-                      <div className="price">{productItem.price}$</div>
+                      <div className="name">{productItem.product_name}</div>
+                      <div className="price">{productItem.product_price}$</div>
                       <div className="description">
                         <p>
                           {t("Create")}: {productItem.product_create}
@@ -62,6 +61,10 @@ const Electronic: React.FC = () => {
                             : t("Out of stock")}
                         </p>
                       </div>
+                      <AddChardViews
+                        productId={productItem.id}
+                        page={"product/electronic"}
+                      />
                     </div>
                   </div>
                 ))

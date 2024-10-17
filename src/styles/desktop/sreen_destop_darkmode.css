@@ -14,10 +14,25 @@
   --font-ml: 15px;
   --font-sm: 20px;
   --font-weight: 900;
+  --price: red;
+  --red-30: rgba(161, 11, 11, 0.515);
+  --greed-30: rgba(13, 173, 13, 0.696);
 }
 
 body.DarkMode {
   background-color: var(--dark);
+}
+body.DarkMode .red {
+  color: red !important;
+}
+body.DarkMode .black {
+  color: black !important;
+}
+body.DarkMode .white {
+  color: white !important;
+}
+body.DarkMode .green {
+  color: green !important;
 }
 body.DarkMode .swal2-popup.swal2-modal.swal2-show {
   background-color: var(--dark-white);
@@ -359,6 +374,96 @@ body.DarkMode .desktop_screen .home .homeContainer .card {
   background-color: var(--dark-blue);
   border: solid 1px var(--dark-line);
   color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard h1 {
+  color: var(--dark-icon);
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem {
+  border: 1px solid var(--dark-line);
+  border-radius: 2px;
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem .cover-items input {
+  width: 15px;
+  height: 15px;
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem .cover-items .title-items {
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem .cover-items .color span {
+  margin-left: 2px;
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem .cover-items .size span {
+  margin-left: 2px;
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem .cover-items .weight span {
+  margin-left: 2px;
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem .quantity label {
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem .quantity .counter {
+  border: 1px solid var(--dark-line);
+  margin-left: 5px;
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem .quantity .counter .btn {
+  width: 40px;
+  height: 30px;
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem .quantity .counter .btn.minus:hover {
+  background-color: rgba(255, 42, 42, 0.68);
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem .quantity .counter .btn.minus {
+  background-color: var(--red-30);
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem .quantity .counter .value-input {
+  width: 50px;
+  height: 30px;
+  background-color: var(--dark-white);
+  color: var(--dark-card);
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem .quantity .counter .btn.plus {
+  background-color: var(--greed-30);
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .rightcard .additem .quantity .counter .btn.plus:hover {
+  background-color: rgb(106, 255, 106);
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .footerright .item label {
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .card .footerright .right .btn {
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .check-out .card .leftside {
+  background-color: var(--dark-blue);
+}
+body.DarkMode .desktop_screen .home .homeContainer .check-out .card .leftside .coverimag {
+  box-shadow: 0 0 2px 2px var(--dark-img-shadow);
+  border-radius: 50%;
+}
+body.DarkMode .desktop_screen .home .homeContainer .check-out .card .leftside .price {
+  margin-top: 20px;
+  border: 1px solid var(--dark-line);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+body.DarkMode .desktop_screen .home .homeContainer .check-out .card .rightside {
+  background-color: var(--dark-blue);
+}
+body.DarkMode .desktop_screen .home .homeContainer .check-out .card .rightside h1 {
+  text-align: center;
+}
+body.DarkMode .desktop_screen .home .homeContainer .check-out .card .rightside .inputbox {
+  border: 1px solid var(--dark-line);
+  background-color: unset;
+  color: var(--dark-text);
+}
+body.DarkMode .desktop_screen .home .homeContainer .check-out .card .rightside .inputbox option {
+  color: var(--dark-white);
+}
+body.DarkMode .desktop_screen .home .homeContainer .check-out .card .rightside .button {
+  border: 1px solid var(--dark-line);
 }
 body.DarkMode .desktop_screen .login_signup_pc {
   background-color: var(--dark-white);

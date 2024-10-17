@@ -14,11 +14,25 @@
   --font-ml: 15px;
   --font-sm: 20px;
   --font-weight: 900;
+  --price: red;
+  --red-30: rgba(161, 11, 11, 0.515);
+  --greed-30: rgba(13, 173, 13, 0.696);
 }
 
 body.DarkMode {
   background-color: var(--dark);
-
+  .red {
+    color: red !important;
+  }
+  .black {
+    color: black !important;
+  }
+  .white {
+    color: white !important;
+  }
+  .green {
+    color: green !important;
+  }
   .swal2-popup.swal2-modal.swal2-show {
     background-color: var(--dark-white);
     border: solid 2px var(--dark-line);
@@ -503,6 +517,117 @@ body.DarkMode {
         background-color: var(--dark-blue);
         border: solid 1px var(--dark-line);
         color: var(--dark-text);
+
+        .rightcard {
+          h1 {
+            color: var(--dark-icon);
+          }
+          .additem {
+            border: 1px solid var(--dark-line);
+            border-radius: 2px;
+
+            .cover-items {
+              input {
+                width: 15px;
+                height: 15px;
+              }
+              .title-items {
+                color: var(--dark-text);
+              }
+              .color span {
+                margin-left: 2px;
+              }
+              .size span {
+                margin-left: 2px;
+                color: var(--dark-text);
+              }
+              .weight span {
+                margin-left: 2px;
+                color: var(--dark-text);
+              }
+            }
+
+            .quantity {
+              label {
+                color: var(--dark-text);
+              }
+              .counter {
+                border: 1px solid var(--dark-line);
+                margin-left: 5px;
+                .btn {
+                  width: 40px;
+                  height: 30px;
+                }
+                .btn.minus:hover {
+                  background-color: rgba(255, 42, 42, 0.68);
+                }
+                .btn.minus {
+                  background-color: var(--red-30);
+                }
+                .value-input {
+                  width: 50px;
+                  height: 30px;
+                  background-color: var(--dark-white);
+                  color: var(--dark-card);
+                }
+                .btn.plus {
+                  background-color: var(--greed-30);
+                }
+                .btn.plus:hover {
+                  background-color: rgb(106, 255, 106);
+                }
+              }
+            }
+          }
+        }
+        .footerright {
+          .item {
+            label {
+              color: var(--dark-text);
+            }
+          }
+          .right {
+            .btn {
+              color: var(--dark-text);
+            }
+          }
+        }
+      }
+      .homeContainer {
+        .check-out {
+          .card {
+            .leftside {
+              background-color: var(--dark-blue);
+              .coverimag {
+                box-shadow: 0 0 2px 2px var(--dark-img-shadow);
+                border-radius: 50%;
+              }
+              .price {
+                margin-top: 20px;
+                border: 1px solid var(--dark-line);
+                padding: 10px 20px;
+                border-radius: 5px;
+              }
+            }
+            .rightside {
+              background-color: var(--dark-blue);
+              h1 {
+                text-align: center;
+              }
+              .inputbox {
+                border: 1px solid var(--dark-line);
+                background-color: unset;
+                color: var(--dark-text);
+                option {
+                  color: var(--dark-white);
+                }
+              }
+              .button {
+                border: 1px solid var(--dark-line);
+              }
+            }
+          }
+        }
       }
     }
 

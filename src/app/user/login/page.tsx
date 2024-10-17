@@ -51,21 +51,10 @@ const SignInSignUpForm = () => {
 
   const setLanguageFromCookies = () => {
     const selectedLanguage = Cookies.get("language") || "en";
-
     if (selectedLanguage) {
       i18n.changeLanguage(selectedLanguage);
       document.documentElement.lang = selectedLanguage;
     }
-    updateFontFamily();
-  };
-
-  const updateFontFamily = () => {
-    document.querySelectorAll("input").forEach((input) => {
-      input.style.fontFamily = document.documentElement.style.fontFamily;
-    });
-    document.querySelectorAll("button").forEach((button) => {
-      button.style.fontFamily = document.documentElement.style.fontFamily;
-    });
   };
 
   const handleSignUpClick = () => {

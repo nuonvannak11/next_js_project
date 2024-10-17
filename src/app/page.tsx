@@ -41,9 +41,8 @@ const Home: React.FC = () => {
                   <div className="single-item" key={productItem.id}>
                     <div className="left-set">
                       <Image
-                        src={`/assets/products/category/All/${link_img(
-                          productItem.product_image
-                        )}`}
+                        className="coverimag"
+                        src={link_img(productItem.product_image)}
                         alt={link_img(productItem.product_image)}
                         width={500}
                         height={500}
@@ -70,7 +69,7 @@ const Home: React.FC = () => {
                             : t("Out of stock")}
                         </p>
                       </div>
-                      <AddChardViews productId={productItem.id} page={"home"} />
+                      <AddChardViews productId={productItem.id} page={"/"} />
                     </div>
                   </div>
                 ))

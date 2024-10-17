@@ -9,6 +9,7 @@ const apiUsers: string = process.env.NEXT_PUBLIC_API_USER || "";
 const apiProducts: string = process.env.NEXT_PUBLIC_API_PRODUCT || "";
 const api_login: string = process.env.NEXT_PUBLIC_API_USER_LOG_IN || "";
 const api_register: string = process.env.NEXT_PUBLIC_API_USER_REGISTER || "";
+const api_order: string = process.env.NEXT_PUBLIC_API_USER_ORDER || "";
 const api_get_one_product: string =
   process.env.NEXT_PUBLIC_API_PRODUCT_GET_ONE || "";
 const colorThemeApi: string =
@@ -286,9 +287,7 @@ export const UpdateUserSubmitter = async (
   }
 };
 
-export const GetOneProduct = async (
-  id: any
-): Promise<any> => {
+export const GetOneProduct = async (id: any): Promise<any> => {
   try {
     const response = await axios.post<MainProps>(
       api_get_one_product,
@@ -298,6 +297,31 @@ export const GetOneProduct = async (
           "Content-Type": "application/json",
         },
         timeout: 10000,
+      }
+    );
+    return response.data;
+  } catch (error: any) {
+    if (error.code === "ECONNABORTED") {
+      console.error("Error: Request timed out");
+    } else {
+      console.error(
+        "Error:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  }
+};
+
+export const OrderProduct = async (formdata: any): Promise<any> => {
+  try {
+    const response = await axios.post<MainProps>(
+      api_order,
+      { formdata },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        timeout: 50000,
       }
     );
     return response.data;

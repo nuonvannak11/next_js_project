@@ -30,6 +30,7 @@ const Cloth: React.FC = () => {
                   <div className="single-item" key={productItem.id}>
                     <div className="left-set">
                       <Image
+                        className="coverimag"
                         src="/assets/products/category/All/bag.png"
                         alt={productItem.name}
                         width={500}
