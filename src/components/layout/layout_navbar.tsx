@@ -18,6 +18,7 @@ import {
 import { useSearch } from "../../contexts/product_search_context";
 import { useSessionData } from "../../utils/helper/use_selector";
 import { empty } from "../../utils/glable_function";
+import Notification from "../../components/user/user_notification";
 const Navbar: React.FC = () => {
   const [user_data, setUserData] = useState<any>([]);
   const { t } = useTranslation();
@@ -93,8 +94,7 @@ const Navbar: React.FC = () => {
                 <FullscreenExitIcon className="icon" />
               </li>
               <li className="item">
-                <NotificationsNoneIcon className="icon" />
-                <div className="counter">1</div>
+                <Notification />
               </li>
               <li className="item">
                 <ChatBubbleOutlineIcon className="icon" />
@@ -107,12 +107,14 @@ const Navbar: React.FC = () => {
                 className="item"
                 onClick={() => handleCategoryClick("/user/profile")}>
                 <Image
-                  src={`/assets/users/${!empty(user_data)?user_data.image:'---.png'}`}
+                  src={`/assets/users/${
+                    !empty(user_data) ? user_data.image : "---.png"
+                  }`}
                   alt="avatar"
                   width={40}
                   height={40}
                   className="avatar"
-                   priority
+                  priority
                 />
               </li>
             </>
